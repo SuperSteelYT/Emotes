@@ -1,0 +1,24 @@
+name: Emotes
+main: me.superischroma.emotes.Emotes
+version: 1.0
+commands:
+    emotes:
+        description: Information about Emotes
+    laugh:
+        description: Laugh!
+    raspberry:
+        description: Blow a raspberry!
+    dance:
+        description: Do a dance!
+    smile:
+        description: Smile!
+    cry:
+        description: Cry.. cry away...
+    grin:
+        description: Smirkity smirk smirk!
+    cheer:
+        description: Cheeeer!
+    backflip:
+        description: Do a backflip!
+    greet:
+        description: Greets everyone on the server!
