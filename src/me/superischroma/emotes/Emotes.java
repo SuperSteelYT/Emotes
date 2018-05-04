@@ -17,7 +17,7 @@ public class Emotes extends JavaPlugin implements Listener {
 	
 	// Settings; likely a temporary thing in the code
 	String servername = "WowieFreedom";
-	String version = "1.11.1";
+	String version = "1.12";
 	
     // Making it easier to send messages to console
 	ConsoleCommandSender console = getServer().getConsoleSender();
@@ -298,6 +298,25 @@ public class Emotes extends JavaPlugin implements Listener {
                 return true;
             }
             Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " slaps " + p.getDisplayName() + ChatColor.GREEN + "!");
+            return true;
+        }
+		if (commandLabel.equalsIgnoreCase("thumbsup")) {
+            if (args.length == 0)
+            {
+                Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " gives a thumbs up!");
+                return true;
+            }
+            if (args.length > 1)
+            {
+                return false;
+            }
+            Player p = Bukkit.getPlayer(args[0]);
+            if (p == null)
+            {
+                sender.sendMessage(igprefix + ChatColor.GRAY + "Player not found!");
+                return true;
+            }
+            Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " gives a thumbs up to " + p.getDisplayName() + ChatColor.GREEN + "!");
             return true;
         }
 		return false;
