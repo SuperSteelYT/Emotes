@@ -15,13 +15,13 @@ public class Command_emotes implements CommandExecutor {
         if(cmdLabel.equalsIgnoreCase("emotes")) 
         {
             if (args.length == 0) {
-			    player.sendMessage(Emotes.cprefix + ChatColor.GREEN + "Emotes " + "v" + Emotes.version + " running on " + Emotes.servername);
+			    player.sendMessage(Emotes.INGAME_PREFIX + ChatColor.GREEN + "Emotes " + "v" + Emotes.PLUGIN_VERSION + " running on " + Emotes.SERVER_NAME);
 			    player.sendMessage(ChatColor.GREEN + "For a list of all commands, do " + "\"" + ChatColor.AQUA + "/emotes list" + ChatColor.GREEN + "\"" + ".");
 			    return true;
 			}
 			if (args.length == 1) {
 				if (args[0].equalsIgnoreCase("list")) {
-					player.sendMessage(Emotes.igprefix + ChatColor.LIGHT_PURPLE + "List of commands:");
+					player.sendMessage(Emotes.INGAME_PREFIX + ChatColor.LIGHT_PURPLE + "List of commands:");
  					player.sendMessage(ChatColor.GREEN + "/emotes - Main command");
  					player.sendMessage(ChatColor.GREEN + "/laugh - Laugh!");
  					player.sendMessage(ChatColor.GREEN + "/raspberry - Blow a raspberry!");
