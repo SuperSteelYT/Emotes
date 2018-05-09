@@ -1,10 +1,12 @@
 package me.superischroma.emotes;
 
 import org.bukkit.command.ConsoleCommandSender;
-import org.bukkit.event.Listener;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.ChatColor;
+import org.bukkit.event.Listener;
 import me.superischroma.emotes.command.*;
+
 
 public class Emotes extends JavaPlugin implements Listener {
         
@@ -12,13 +14,16 @@ public class Emotes extends JavaPlugin implements Listener {
 	public static String CONSOLE_PREFIX = "[Emotes] ";
 	public static String INGAME_PREFIX = ChatColor.DARK_AQUA + "[Emotes] ";
 	
-	// Settings; likely a temporary thing in the code
+	// Settings
 	public static String SERVER_NAME = "WowieFreedom";
-	public static String PLUGIN_VERSION = "1.13-pre2";
-	
-    // Making it easier to send messages to console
+	public static String PLUGIN_VERSION = "1.13.1";
+        
+        // Author; Editing this is NOT allowed.
+	public static String AUTHOR = "Super_";
+        
+        // Making it easier to send messages to console
 	ConsoleCommandSender console = getServer().getConsoleSender();
-	
+        
 	// When the plugin enables
         @Override
 	public void onEnable() {
@@ -39,6 +44,10 @@ public class Emotes extends JavaPlugin implements Listener {
                 this.getCommand("slap").setExecutor(new Command_slap());
                 this.getCommand("smile").setExecutor(new Command_smile());
                 this.getCommand("thumbsup").setExecutor(new Command_thumbsup());
+                this.getCommand("flip").setExecutor(new Command_flip());
+                this.getCommand("eat").setExecutor(new Command_eat());
+                this.getCommand("tableflip").setExecutor(new Command_tableflip());
+                Bukkit.getServer().getPluginManager().registerEvents(this, this);
 	}
 	
 	// When the plugin disables
