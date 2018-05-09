@@ -7,6 +7,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import me.superischroma.emotes.Emotes;
 
+// You are NOT allowed to edit this file directly as it is a violation of our copyright. 
+
 public class Command_emotes implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender cs, Command cmd, String cmdLabel, String[] args) 
@@ -16,6 +18,7 @@ public class Command_emotes implements CommandExecutor {
         {
             if (args.length == 0) {
 			    player.sendMessage(Emotes.INGAME_PREFIX + ChatColor.GREEN + "Emotes " + "v" + Emotes.PLUGIN_VERSION + " running on " + Emotes.SERVER_NAME);
+                            player.sendMessage(ChatColor.GREEN + "Created by " + Emotes.AUTHOR + " for the WowieFreedom server.");
 			    player.sendMessage(ChatColor.GREEN + "For a list of all commands, do " + "\"" + ChatColor.AQUA + "/emotes list" + ChatColor.GREEN + "\"" + ".");
 			    return true;
 			}
@@ -36,6 +39,10 @@ public class Command_emotes implements CommandExecutor {
  					player.sendMessage(ChatColor.GREEN + "/kiss - Just a little smooch!");
  					player.sendMessage(ChatColor.GREEN + "/highfive - Broosss!");
  					player.sendMessage(ChatColor.GREEN + "/slap - Someone asleep? *SLAP*");
+                                        player.sendMessage(ChatColor.GREEN + "/flip - Do a flip!");
+                                        player.sendMessage(ChatColor.GREEN + "/eat - Eat a nice snack!");
+                                        player.sendMessage(ChatColor.GREEN + "/tableflip - Mad? Flip a table!");
+                                        player.sendMessage(ChatColor.GREEN + "/thumbsup - Give someone a thumbs up!");
  					return true;
 				}
 			}

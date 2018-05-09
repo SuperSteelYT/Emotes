@@ -14,7 +14,7 @@ public class Command_grin implements CommandExecutor {
     {
         Player player = (Player) cs;
 		if (cmdLabel.equalsIgnoreCase("grin")) {
-			if (args.length == 0)
+	    if (args.length == 0)
             {
                 Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " grins!");
                 return true;
