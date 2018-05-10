@@ -1,5 +1,6 @@
 package me.superischroma.emotes.command;
 
+import me.superischroma.emotes.Emotes;
 import static me.superischroma.emotes.Emotes.INGAME_PREFIX;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -26,7 +27,7 @@ public class Command_grin implements CommandExecutor {
             Player p = Bukkit.getPlayer(args[0]);
             if (p == null)
             {
-                cs.sendMessage(INGAME_PREFIX + ChatColor.GRAY + "Player not found!");
+                cs.sendMessage(Emotes.PLAYER_NOT_FOUND);
                 return true;
             }
             Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " grins at " + p.getDisplayName() + ChatColor.GREEN + "!");

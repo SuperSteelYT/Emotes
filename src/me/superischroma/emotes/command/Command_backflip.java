@@ -13,12 +13,8 @@ public class Command_backflip implements CommandExecutor {
     {
         Player player = (Player) cs;
 		if (cmdLabel.equalsIgnoreCase("backflip")) {
-                    if (cs instanceof Player) {
 			Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " does a backflip!");
 			return true;
-		    } else {
-                    cs.sendMessage(ChatColor.RED + "Only players can use this command!");
-                    }
                 }
         return false;
     }

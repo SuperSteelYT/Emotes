@@ -7,19 +7,33 @@ import org.bukkit.ChatColor;
 import org.bukkit.event.Listener;
 import me.superischroma.emotes.command.*;
 
+/*
+ Release Details:
+ Version 1.14
+ Compiled by Super_
+
+ Changelog:
+ Variable for when a player is not found
+
+ Planned Changes:
+ Fix console error
+*/
 
 public class Emotes extends JavaPlugin implements Listener {
-        
+
 	// Prefixes
-	public static String CONSOLE_PREFIX = "[Emotes] ";
-	public static String INGAME_PREFIX = ChatColor.DARK_AQUA + "[Emotes] ";
+	public static final String CONSOLE_PREFIX = "[Emotes] ";
+	public static final String INGAME_PREFIX = ChatColor.DARK_AQUA + "[Emotes] ";
 	
 	// Settings
-	public static String SERVER_NAME = "WowieFreedom";
-	public static String PLUGIN_VERSION = "1.13.1";
+	public static final String SERVER_NAME = "WowieFreedom";
+	public static final String PLUGIN_VERSION = "1.14";
+        
+        // Player Not Found
+        public static final String PLAYER_NOT_FOUND = INGAME_PREFIX + ChatColor.GRAY + "Player not found!";
         
         // Author; Editing this is NOT allowed.
-	public static String AUTHOR = "Super_";
+	public static final String AUTHOR = "Super_";
         
         // Making it easier to send messages to console
 	ConsoleCommandSender console = getServer().getConsoleSender();

@@ -1,6 +1,6 @@
 package me.superischroma.emotes.command;
 
-import static me.superischroma.emotes.Emotes.INGAME_PREFIX;
+import me.superischroma.emotes.Emotes;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -26,7 +26,7 @@ public class Command_thumbsup implements CommandExecutor {
             Player p = Bukkit.getPlayer(args[0]);
             if (p == null)
             {
-                cs.sendMessage(INGAME_PREFIX + ChatColor.GRAY + "Player not found!");
+                cs.sendMessage(Emotes.PLAYER_NOT_FOUND);
                 return true;
             }
             Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " gives a thumbs up to " + p.getDisplayName() + ChatColor.GREEN + "!");

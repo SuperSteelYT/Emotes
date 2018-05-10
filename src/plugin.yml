@@ -1,6 +1,6 @@
 name: Emotes
 main: me.superischroma.emotes.Emotes
-version: 1.13.1
+version: 1.14
 commands:
     emotes:
         description: Information about Emotes
