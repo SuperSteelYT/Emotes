@@ -13,11 +13,17 @@ public class Command_greet implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender cs, Command cmd, String cmdLabel, String[] args) 
     {
-        Player player = (Player) cs;
+        if (!(cs instanceof Player)) 
+        {
+            Bukkit.getConsoleSender().sendMessage(Emotes.CONSOLE_SENDER);
+            return true;
+        }
+        else
+        {
 		if (cmdLabel.equalsIgnoreCase("greet")) {
             if (args.length == 0)
             {
-                Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " greets everyone!");
+                Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " greets everyone!");
                 return true;
             }
             if (args.length > 1)
@@ -30,9 +36,10 @@ public class Command_greet implements CommandExecutor {
                 cs.sendMessage(Emotes.PLAYER_NOT_FOUND);
                 return true;
             }
-            Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " greets " + p.getDisplayName() + ChatColor.GREEN + "!");
+            Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " greets " + p.getDisplayName() + ChatColor.GREEN + "!");
             return true;
 		}
+        }
         return false;
     }
 }

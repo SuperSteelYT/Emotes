@@ -13,11 +13,17 @@ public class Command_dance implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender cs, Command cmd, String cmdLabel, String[] args) 
     {
-        Player player = (Player) cs;
+        if (!(cs instanceof Player)) 
+        {
+            Bukkit.getConsoleSender().sendMessage(Emotes.CONSOLE_SENDER);
+            return true;
+        }
+        else
+        {
             if (cmdLabel.equalsIgnoreCase("dance")) {
 			if (args.length == 0)
             {
-                Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " does a dance!");
+                Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " does a dance!");
                 return true;
             }
             if (args.length > 1)
@@ -30,9 +36,10 @@ public class Command_dance implements CommandExecutor {
                 cs.sendMessage(Emotes.PLAYER_NOT_FOUND);
                 return true;
             }
-            Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " dances with " + p.getDisplayName() + ChatColor.GREEN + "!");
+            Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " dances with " + p.getDisplayName() + ChatColor.GREEN + "!");
             return true;
 		}
+        }
         return false;
     }
 }

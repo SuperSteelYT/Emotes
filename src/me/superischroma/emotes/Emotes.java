@@ -6,34 +6,39 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.ChatColor;
 import org.bukkit.event.Listener;
 import me.superischroma.emotes.command.*;
+import me.superischroma.emotes.config.ConfigManager;
 
 /*
  Release Details:
- Version 1.14
+ Version 1.15
  Compiled by Super_
 
  Changelog:
- Variable for when a player is not found
+ Fixed console error
 
  Planned Changes:
- Fix console error
+ Work on EmotesCommand.java and config file
 */
 
 public class Emotes extends JavaPlugin implements Listener {
-
+        
+        
 	// Prefixes
 	public static final String CONSOLE_PREFIX = "[Emotes] ";
 	public static final String INGAME_PREFIX = ChatColor.DARK_AQUA + "[Emotes] ";
 	
 	// Settings
 	public static final String SERVER_NAME = "WowieFreedom";
-	public static final String PLUGIN_VERSION = "1.14";
+	public static final String PLUGIN_VERSION = "1.15-pre1";
         
-        // Player Not Found
+        // Variables
         public static final String PLAYER_NOT_FOUND = INGAME_PREFIX + ChatColor.GRAY + "Player not found!";
+        public static final String CONSOLE_SENDER = ChatColor.RED + "You cannot execute this command from console!";
         
         // Author; Editing this is NOT allowed.
 	public static final String AUTHOR = "Super_";
+        
+        private ConfigManager cfgm;
         
         // Making it easier to send messages to console
 	ConsoleCommandSender console = getServer().getConsoleSender();
@@ -61,7 +66,10 @@ public class Emotes extends JavaPlugin implements Listener {
                 this.getCommand("flip").setExecutor(new Command_flip());
                 this.getCommand("eat").setExecutor(new Command_eat());
                 this.getCommand("tableflip").setExecutor(new Command_tableflip());
+                this.getCommand("pinch").setExecutor(new Command_pinch());
                 Bukkit.getServer().getPluginManager().registerEvents(this, this);
+                loadConfigManager();
+                
 	}
 	
 	// When the plugin disables
@@ -69,4 +77,11 @@ public class Emotes extends JavaPlugin implements Listener {
 	public void onDisable() {
 		console.sendMessage(CONSOLE_PREFIX + "Disabled Emotes v" + PLUGIN_VERSION);
 	}
+        
+        public void loadConfigManager() {
+           cfgm = new ConfigManager();
+           cfgm.setup();
+           cfgm.savePlayers();
+           cfgm.reloadPlayers();
+        }
 }

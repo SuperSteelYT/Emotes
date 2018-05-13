@@ -1,5 +1,6 @@
 package me.superischroma.emotes.command;
 
+import me.superischroma.emotes.Emotes;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -11,11 +12,18 @@ public class Command_flip implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender cs, Command cmd, String cmdLabel, String[] args) 
     {
-        Player player = (Player) cs;
+        if (!(cs instanceof Player))
+        {
+            Bukkit.getConsoleSender().sendMessage(Emotes.CONSOLE_SENDER);
+            return true;
+        }
+        else
+        {
 		if (cmdLabel.equalsIgnoreCase("flip")) {
-			Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " does a flip!");
+			Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " does a flip!");
 			return true;
 		}
+        }
         return false;
     }
 }

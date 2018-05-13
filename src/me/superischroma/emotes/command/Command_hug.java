@@ -13,11 +13,17 @@ public class Command_hug implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender cs, Command cmd, String cmdLabel, String[] args) 
     {
-        Player player = (Player) cs;
+        if (!(cs instanceof Player)) 
+        {
+            Bukkit.getConsoleSender().sendMessage(Emotes.CONSOLE_SENDER);
+            return true;
+        }
+        else
+        {
                     if (cmdLabel.equalsIgnoreCase("hug")) {
                 if (args.length == 0)
                 {
-                    Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " hugs themselves!");
+                    Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " hugs themselves!");
                     return true;
                 }
                 if (args.length > 1)
@@ -30,9 +36,10 @@ public class Command_hug implements CommandExecutor {
                     cs.sendMessage(Emotes.PLAYER_NOT_FOUND);
                     return true;
                 }
-            Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " hugs " + p.getDisplayName() + ChatColor.GREEN + "!");
+            Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " hugs " + p.getDisplayName() + ChatColor.GREEN + "!");
             return true;
             }
+        }
         return false;
     }
 }

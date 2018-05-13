@@ -1,7 +1,6 @@
 package me.superischroma.emotes.command;
 
 import me.superischroma.emotes.Emotes;
-import static me.superischroma.emotes.Emotes.INGAME_PREFIX;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -13,11 +12,17 @@ public class Command_eat implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender cs, Command cmd, String cmdLabel, String[] args) 
     {
-        Player player = (Player) cs;
+        if (!(cs instanceof Player)) 
+        {
+            Bukkit.getConsoleSender().sendMessage(Emotes.CONSOLE_SENDER);
+            return true;
+        }
+        else
+        {
             if (cmdLabel.equalsIgnoreCase("eats")) {
 			if (args.length == 0)
             {
-                Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " eats a snack!");
+                Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " eats a snack!");
                 return true;
             }
             if (args.length > 1)
@@ -30,9 +35,10 @@ public class Command_eat implements CommandExecutor {
                 cs.sendMessage(Emotes.PLAYER_NOT_FOUND);
                 return true;
             }
-            Bukkit.broadcastMessage(player.getDisplayName() + ChatColor.GREEN + " eats with " + p.getDisplayName() + ChatColor.GREEN + "!");
+            Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " eats with " + p.getDisplayName() + ChatColor.GREEN + "!");
             return true;
 		}
+        }
         return false;
     }
 }

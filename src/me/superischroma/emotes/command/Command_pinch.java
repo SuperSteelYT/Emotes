@@ -9,7 +9,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class Command_laugh implements CommandExecutor {
+public class Command_pinch implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender cs, Command cmd, String cmdLabel, String[] args) 
     {
@@ -18,12 +18,12 @@ public class Command_laugh implements CommandExecutor {
             Bukkit.getConsoleSender().sendMessage(Emotes.CONSOLE_SENDER);
             return true;
         }
-        else
+        else 
         {
-            if (cmdLabel.equalsIgnoreCase("laugh")) {
+            if (cmdLabel.equalsIgnoreCase("pinch")) {
 			if (args.length == 0)
             {
-                Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " laughs!");
+                Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " pinches themselves!");
                 return true;
             }
             if (args.length > 1)
@@ -36,9 +36,9 @@ public class Command_laugh implements CommandExecutor {
                 cs.sendMessage(Emotes.PLAYER_NOT_FOUND);
                 return true;
             }
-            Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " laughs at " + p.getDisplayName() + ChatColor.GREEN + "!");
+            Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " pinches " + p.getDisplayName() + ChatColor.GREEN + "!");
             return true;
-		}
+            }
         }
         return false;
     }

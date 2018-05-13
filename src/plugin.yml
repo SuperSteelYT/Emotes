@@ -1,6 +1,6 @@
 name: Emotes
 main: me.superischroma.emotes.Emotes
-version: 1.14
+version: 1.15
 commands:
     emotes:
         description: Information about Emotes
@@ -56,4 +56,7 @@ commands:
         usage: /<command> [player]
     thumbsup:
         description: Give someone a thumbs up!
+        usage: /<command> [player]
+    pinch:
+        description: Pinch! Ow!
         usage: /<command> [player]
