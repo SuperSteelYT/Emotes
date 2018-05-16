@@ -6,15 +6,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.ChatColor;
 import org.bukkit.event.Listener;
 import me.superischroma.emotes.command.*;
-import me.superischroma.emotes.config.ConfigManager;
 
 /*
  Release Details:
- Version 1.16
+ Version 1.17
  Compiled by Super_
 
  Changelog:
- Changed project to Maven
+ Small update - file directory changes & removed some unused imports
 
  Planned Changes:
  Work on EmotesCommand.java and config file
@@ -29,7 +28,7 @@ public class Emotes extends JavaPlugin implements Listener {
 	
 	// Settings
 	public static final String SERVER_NAME = "WowieFreedom";
-	public static final String PLUGIN_VERSION = "1.16";
+	public static final String PLUGIN_VERSION = "1.17";
         
         // Variables
         public static final String PLAYER_NOT_FOUND = INGAME_PREFIX + ChatColor.GRAY + "Player not found!";
