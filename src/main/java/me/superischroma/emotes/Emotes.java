@@ -9,11 +9,19 @@ import me.superischroma.emotes.command.*;
 
 /*
  Release Details:
+<<<<<<< HEAD
  Version 1.18
  Compiled by Super_
 
  Changelog:
  Config file implemented - finishing touches next update -S
+=======
+ Version 1.17
+ Compiled by Super_
+
+ Changelog:
+ Small update - file directory changes & removed some unused imports
+>>>>>>> 812f95585eefcfefd9a681772c57cc540be368c9
 
  Planned Changes:
  Work on EmotesCommand.java
@@ -27,7 +35,12 @@ public class Emotes extends JavaPlugin implements Listener {
 	public static final String INGAME_PREFIX = ChatColor.DARK_AQUA + "[Emotes] ";
 	
 	// Settings
+<<<<<<< HEAD
 	public static final String PLUGIN_VERSION = "1.18";
+=======
+	public static final String SERVER_NAME = "WowieFreedom";
+	public static final String PLUGIN_VERSION = "1.17";
+>>>>>>> 812f95585eefcfefd9a681772c57cc540be368c9
         
         // Variables
         public static final String PLAYER_NOT_FOUND = INGAME_PREFIX + ChatColor.GRAY + "Player not found!";

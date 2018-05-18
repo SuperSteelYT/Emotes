@@ -3,7 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>me.superischroma</groupId>
     <artifactId>Emotes</artifactId>
+<<<<<<< HEAD
     <version>1.18</version>
+=======
+    <version>1.17</version>
+>>>>>>> 812f95585eefcfefd9a681772c57cc540be368c9
     <packaging>jar</packaging>
     <dependencies>
         <dependency>

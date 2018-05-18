@@ -1,6 +1,10 @@
 name: Emotes
 main: me.superischroma.emotes.Emotes
+<<<<<<< HEAD
 version: 1.18
+=======
+version: 1.17
+>>>>>>> 812f95585eefcfefd9a681772c57cc540be368c9
 description: A chat-based emote plugin created for the WowieFreedom server. Express yourself!
 author: Super_
 commands:

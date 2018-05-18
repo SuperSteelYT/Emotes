@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 server_name: WowieFreedom
+=======
+server:
+    name: WowieFreedom
+>>>>>>> 812f95585eefcfefd9a681772c57cc540be368c9
