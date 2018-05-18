@@ -37,7 +37,7 @@ public class Command_cry implements CommandExecutor {
             }
             Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " cries on " + p.getDisplayName() + ChatColor.GREEN + ".");
             return true;
-		}
+            }
         }
         return false;
     }

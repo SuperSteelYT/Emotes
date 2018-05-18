@@ -7,15 +7,18 @@ import org.bukkit.command.Command;
 import org.bukkit.entity.Player;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import me.superischroma.emotes.Emotes;
+import org.bukkit.plugin.Plugin;
 
 // You are NOT allowed to edit this file directly as it is a violation of our copyright. 
 
 public class Command_emotes implements CommandExecutor {
-    FileConfiguration config;
-    File cfile;
+    
+    private final Plugin plugin = Emotes.getPlugin(Emotes.class);
+    
+    // Server Name
+    String SERVER_NAME = plugin.getConfig().getString("server_name");
+    
     @Override
     public boolean onCommand(CommandSender cs, Command cmd, String cmdLabel, String[] args) 
     {
@@ -30,7 +33,7 @@ public class Command_emotes implements CommandExecutor {
             {
             if (args.length == 0)
                         {
-			    cs.sendMessage(Emotes.INGAME_PREFIX + ChatColor.GREEN + "Emotes " + "v" + Emotes.PLUGIN_VERSION + " running on " + Emotes.SERVER_NAME);
+			    cs.sendMessage(Emotes.INGAME_PREFIX + ChatColor.GREEN + "Emotes " + "v" + Emotes.PLUGIN_VERSION + " running on " + SERVER_NAME);
                             cs.sendMessage(ChatColor.GREEN + "Created by " + Emotes.AUTHOR + " for the WowieFreedom server.");
 			    cs.sendMessage(ChatColor.GREEN + "For a list of all commands, do " + "\"" + ChatColor.AQUA + "/emotes list" + ChatColor.GREEN + "\"" + ".");
 			    return true;
@@ -60,11 +63,18 @@ public class Command_emotes implements CommandExecutor {
                                         cs.sendMessage(ChatColor.GREEN + "/pinch - Pinch! Ow!");
  					return true;
 				}
+                                // Working on it
                                 if (args[0].equalsIgnoreCase("reload")) 
                                 {
-                                   config = YamlConfiguration.loadConfiguration(cfile);
-                                   cs.sendMessage(Emotes.INGAME_PREFIX + ChatColor.GRAY + "Emotes config reloaded.");
+                                   plugin.reloadConfig();
+                                   plugin.saveConfig();
+                                   cs.sendMessage(Emotes.INGAME_PREFIX + ChatColor.GRAY + "Emotes v" 
+                                           + Emotes.PLUGIN_VERSION + " reloaded.");
+                                   Bukkit.getConsoleSender().sendMessage(Emotes.CONSOLE_PREFIX 
+                                           + cs.getName() + " has reloaded the plugin.");
+                                   return true;
                                 }
+
                         }
                 }
         }

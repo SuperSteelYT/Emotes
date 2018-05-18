@@ -6,18 +6,17 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.ChatColor;
 import org.bukkit.event.Listener;
 import me.superischroma.emotes.command.*;
-import me.superischroma.emotes.config.ConfigManager;
 
 /*
  Release Details:
- Version 1.16
+ Version 1.18
  Compiled by Super_
 
  Changelog:
- Changed project to Maven
+ Config file implemented - finishing touches next update -S
 
  Planned Changes:
- Work on EmotesCommand.java and config file
+ Work on EmotesCommand.java
 */
 
 public class Emotes extends JavaPlugin implements Listener {
@@ -28,8 +27,7 @@ public class Emotes extends JavaPlugin implements Listener {
 	public static final String INGAME_PREFIX = ChatColor.DARK_AQUA + "[Emotes] ";
 	
 	// Settings
-	public static final String SERVER_NAME = "WowieFreedom";
-	public static final String PLUGIN_VERSION = "1.16";
+	public static final String PLUGIN_VERSION = "1.18";
         
         // Variables
         public static final String PLAYER_NOT_FOUND = INGAME_PREFIX + ChatColor.GRAY + "Player not found!";
@@ -46,7 +44,7 @@ public class Emotes extends JavaPlugin implements Listener {
         @Override
 	public void onEnable() {
 		console.sendMessage(CONSOLE_PREFIX + "Enabled Emotes v" + PLUGIN_VERSION);
-                // Commands
+                // Command Executors
                 this.getCommand("emotes").setExecutor(new Command_emotes());
                 this.getCommand("backflip").setExecutor(new Command_backflip());
                 this.getCommand("cheer").setExecutor(new Command_cheer());
@@ -68,6 +66,9 @@ public class Emotes extends JavaPlugin implements Listener {
                 this.getCommand("pinch").setExecutor(new Command_pinch());
                 Bukkit.getServer().getPluginManager().registerEvents(this, this);
                 
+                getConfig().options().copyDefaults(true);
+                saveConfig();
+                reloadConfig();
 	}
 	
 	// When the plugin disables

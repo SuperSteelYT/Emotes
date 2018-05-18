@@ -1,7 +1,6 @@
 package me.superischroma.emotes.command;
 
 import me.superischroma.emotes.Emotes;
-import static me.superischroma.emotes.Emotes.INGAME_PREFIX;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
