@@ -9,20 +9,17 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class Command_tableflip implements CommandExecutor {
+
     @Override
-    public boolean onCommand(CommandSender cs, Command cmd, String cmdLabel, String[] args) 
-    {
-        if (!(cs instanceof Player)) 
-        {
+    public boolean onCommand(CommandSender cs, Command cmd, String cmdLabel, String[] args) {
+        if (!(cs instanceof Player)) {
             Bukkit.getConsoleSender().sendMessage(Emotes.CONSOLE_SENDER);
             return true;
-        }
-        else
-        {
-		if (cmdLabel.equalsIgnoreCase("tableflip")) {
-			Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " flips the table!");
-			return true;
-		}
+        } else {
+            if (cmdLabel.equalsIgnoreCase("tableflip")) {
+                Bukkit.broadcastMessage(((Player) cs).getDisplayName() + ChatColor.GREEN + " flips the table!");
+                return true;
+            }
         }
         return false;
     }

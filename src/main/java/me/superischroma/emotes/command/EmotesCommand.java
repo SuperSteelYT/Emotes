@@ -6,10 +6,9 @@ import org.bukkit.command.CommandSender;
 public abstract class EmotesCommand {
 
     // WORK IN PROGRESS //
-    
     CommandSender cs;
-    protected boolean isConsole()
-    {
+
+    protected boolean isConsole() {
         return !(cs instanceof Player);
     }
 }
