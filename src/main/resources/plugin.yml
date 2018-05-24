@@ -62,3 +62,6 @@ commands:
     pinch:
         description: Pinch! Ow!
         usage: /<command> [player]
+    clap:
+        description: Give a hand!
+        usage: /<command> [player]

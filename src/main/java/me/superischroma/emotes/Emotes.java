@@ -9,11 +9,11 @@ import me.superischroma.emotes.command.*;
 
 /*
  Release Details:
- Version 1.18
+ Version 1.19
  Compiled by Super_
 
  Changelog:
- Config file implemented - finishing touches next update -S
+ New command -S
 
  Planned Changes:
  Work on EmotesCommand.java
@@ -61,6 +61,7 @@ public class Emotes extends JavaPlugin implements Listener {
         this.getCommand("eat").setExecutor(new Command_eat());
         this.getCommand("tableflip").setExecutor(new Command_tableflip());
         this.getCommand("pinch").setExecutor(new Command_pinch());
+        this.getCommand("clap").setExecutor(new Command_clap());
         Bukkit.getServer().getPluginManager().registerEvents(this, this);
 
         getConfig().options().copyDefaults(true);

@@ -55,6 +55,7 @@ public class Command_emotes implements CommandExecutor {
                         cs.sendMessage(ChatColor.GREEN + "/tableflip - Mad? Flip a table!");
                         cs.sendMessage(ChatColor.GREEN + "/thumbsup - Give someone a thumbs up!");
                         cs.sendMessage(ChatColor.GREEN + "/pinch - Pinch! Ow!");
+                        cs.sendMessage(ChatColor.GREEN + "/clap - Give a hand!");
                         return true;
                     }
                     // Working on it
